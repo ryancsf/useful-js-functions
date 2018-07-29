@@ -157,3 +157,23 @@ function getRandomInt(min, max) {
 }
 
 throwDices(5);
+
+// checks type of Object
+function typeOf(obj) {
+    return {}.toString
+            .call(obj)
+            .split(' ')[1]
+            .slice(0, -1)
+            .toLowerCase();
+}
+
+typeOf(); //undefined
+typeOf(null); //null
+typeOf(NaN); //number
+typeOf(5); //number
+typeOf({}); //object
+typeOf([]); //array
+typeOf(''); //string
+typeOf(function () {}); //function
+typeOf(/a/) //regexp
+typeOf(new Date()) //date
